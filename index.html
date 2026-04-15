@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Findly</title>
+    <link rel="stylesheet" href="fontawesome-free-7.1.0-web/css/all.min.css">
+    <link rel="stylesheet" href="estilos.css">
+
+    <link rel="shortcut icon" href="img/logo.png">
+</head>
+<body>
+
+    <nav class="nav-principal">
+
+        <div class="logo">
+        <img src="img/logo.png" alt="Logo">
+        <a href="#">Findly</a>
+        </div>
+
+        <div class="enlaces">
+            <a href="musica.html">Música</a>
+            <a href="libros.html">Libros</a>
+            <a href="moda.html">Moda</a>
+            <a href="videojuegos.html">Videojuegos</a>
+        </div>
+
+        <div class="input-search">
+            <i class="fas fa-search"></i>
+            <input type="text" name="" id="" placeholder="Encuentra lo ideal para ti sobre libros, moda, etc.">
+        </div>
+
+        <div class="enlaces-usuario">
+            <a href="inicioSesion.html">Iniciar sesión</a>
+            <a href="registro.html">Registrarse</a>
+         </div>
+        
+    </nav>
+
+    <div class="nav-sub">
+        <div class="enlaces-sub">
+        <a href="#destacados">Usuarios Destacados</a>
+        </div>
+    </div>
+
+<header>
+    <div class="content-header">
+        <h1>¡Encuentra tus favoritos!</h1>
+        <h2>Sigue los perfiles ideales para ti y guárdate sus listas colaborativas.</h2>
+        <p>Empieza visitando algunas de las listas colaborativas más destacadas.</p>
+    </div>
+
+    <div class="slider-wrapper">
+        <button class="prev" onclick="manualMove(-1)">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        
+        <div class="slider-container" id="mainSlider">
+            <div class="slide-group">
+                <div class="imagen-header1"><a href="librosInfantiles.html">Libros Infantiles</a></div>
+                <div class="imagen-header2"><a href="modaVintage.html">Moda Vintage</a></div>
+                <div class="imagen-header3"><a href="reggaeton.html">Reggaeton</a></div>
+                <div class="imagen-header4"><a href="juegosGuerra.html">Videojuegos Guerra</a></div>
+            </div>
+
+            <div class="slide-group">
+                <div class="imagen-header5"><a href="#">Rock</a></div>
+                <div class="imagen-header6"><a href="#">Animados</a></div>
+                <div class="imagen-header7"><a href="#">Moda Baggy</a></div>
+                <div class="imagen-header8"><a href="#">Terror</a></div>
+            </div>
+
+            <div class="slide-group">
+                <div class="imagen-header9"><a href="#">Graduación</a></div>
+                <div class="imagen-header10"><a href="#">Clásica</a></div>
+                <div class="imagen-header11"><a href="#">Romance</a></div>
+                <div class="imagen-header12"><a href="#">Juegos Terror</a></div>
+            </div>
+        </div>
+
+        <button class="next" onclick="manualMove(1)">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+</header>
+
+<section class="seccion-destacados">
+<div class="destacados-titulo">
+        <h1 id="destacados">Usuarios destacados</h1>
+        <p>Descubre a los mejores perfiles de nuestra comunidad</p>
+    </div>
+
+    <div class="destacados-container">
+        <div class="user-card" style="background-image: url('img/moda2.1.jfif');">
+            <div class="card-overlay"></div>
+            <img src="img/usuario1.2.png" alt="Ana" class="user-img">
+            <div class="user-details">
+                <span class="user-category">Moda Vintage</span>
+                <h3>Ana Valenti</h3>
+                <p>Coleccionista de prendas únicas y estética de los años 90.</p>
+            </div>
+            <a href="#" class="btn-profile">Ver perfil</a>
+        </div>
+
+        <div class="user-card" style="background-image: url('img/musica2.2.jfif');">
+            <div class="card-overlay"></div>
+            <img src="img/usuarios1.4.png" alt="Marco" class="user-img">
+            <div class="user-details">
+                <span class="user-category">Música Rock</span>
+                <h3>Marco Rossi</h3>
+                <p>Especialista en vinilos y la historia del rock clásico.</p>
+            </div>
+            <a href="#" class="btn-profile">Ver perfil</a>
+        </div>
+
+        <div class="user-card" style="background-image: url('img/libros2.2.jpg');">
+            <div class="card-overlay"></div>
+            <img src="img/usuarios1.png" alt="Elena" class="user-img">
+            <div class="user-details">
+                <span class="user-category">Libros de Terror</span>
+                <h3>Elena Somoza</h3>
+                <p>Amante de las novelas góticas y el suspense psicológico.</p>
+            </div>
+            <a href="#" class="btn-profile">Ver perfil</a>
+        </div>
+
+        <div class="user-card" style="background-image: url('img/juegos2.1.jfif');">
+            <div class="card-overlay"></div>
+            <img src="img/gamerUser.png" alt="Javier" class="user-img">
+            <div class="user-details">
+                <span class="user-category">Videojuegos</span>
+                <h3>Javier K.</h3>
+                <p>Analista de juegos y narrativa en mundos abiertos.</p>
+            </div>
+            <a href="#" class="btn-profile">Ver perfil</a>
+        </div>
+    </div>
+</section>
+
+    <footer class="copy">
+        <p>Términos del servicio</p>
+        <p>Política de privacidad</p>
+        <p>Ayuda</p>
+    </footer>
+
+<script>
+    let currentGroup = 0;
+    const slider = document.getElementById('mainSlider');
+    const groups = document.querySelectorAll('.slide-group');
+    const totalGroups = groups.length;
+
+    function moveSlider(direction) {
+        // Quitamos la animación para reiniciarla
+        slider.style.opacity = "0";
+        slider.style.transform = "scale(0.98)";
+
+        setTimeout(() => {
+            currentGroup += direction;
+
+            // Lógica infinita
+            if (currentGroup >= totalGroups) {
+                currentGroup = 0;
+            } else if (currentGroup < 0) {
+                currentGroup = totalGroups - 1;
+            }
+
+            // Calculamos posición
+            const slideWidth = slider.clientWidth;
+            slider.scrollTo({
+                left: currentGroup * slideWidth,
+                behavior: 'auto' // 'auto' para que el efecto lo haga el CSS
+            });
+
+            // Reaplicamos el efecto visual
+            slider.style.opacity = "1";
+            slider.style.transform = "scale(1)";
+        }, 300); // Pequeña pausa para que el ojo note el cambio
+    }
+
+    // Auto-play cada 5 segundos
+    let autoSlide = setInterval(() => moveSlider(1), 5000);
+
+    // Resetear el tiempo si el usuario hace clic manualmente
+    function manualMove(dir) {
+        clearInterval(autoSlide);
+        moveSlider(dir);
+        autoSlide = setInterval(() => moveSlider(1), 5000);
+    }
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const titulo = document.querySelector('.destacados-titulo h1');
+
+    if (titulo) {
+        // Configuramos el observador para pausar/activar según visibilidad
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Mantiene el ritmo pausado y constante
+                    titulo.style.animationPlayState = 'running';
+                } else {
+                    titulo.style.animationPlayState = 'paused';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        observer.observe(titulo);
+    }
+});
+</script>
+    
+</body>
+</html>

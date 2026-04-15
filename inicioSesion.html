@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio Sesión - Findly</title>
+    <link rel="stylesheet" href="fontawesome-free-7.1.0-web/css/all.min.css">
+    <link rel="stylesheet" href="inicioSesion.css">
+
+    <!-- Cambiamos el icono de la pagina web -->
+    <link rel="shortcut icon" href="img/logo.png">
+</head>
+<body>
+
+    <!-- MENU PRINCIPAL -->
+    <nav class="nav-principal">
+
+        <!-- Logo -->
+        <div class="logo">
+        <img src="img/logo.png" alt="Logo">
+        <a href="index.html">Findly</a>
+        </div>
+
+        <!-- Menu -->
+        <div class="enlaces">
+            <a href="musica.html">Música</a>
+            <a href="libros.html">Libros</a>
+            <a href="moda.html">Moda</a>
+            <a href="videojuegos.html">Videojuegos</a>
+        </div>
+
+        <!-- Buscador -->
+        <div class="input-search">
+            <i class="fas fa-search"></i>
+            <input type="text" name="" id="" placeholder="Encuentra lo ideal para ti sobre libros, moda, etc.">
+        </div>
+
+        <!-- Inicio / Registro Usuario -->
+         <div class="enlaces-usuario">
+            <a href="inicioSesion.html">Iniciar sesión</a>
+            <a href="registro.html">Registrase</a>
+         </div>
+        
+    </nav>
+
+    <header>
+
+        <!-- Inicio de sesión -->
+        <section class="card-inicio">
+            <h2>Iniciar sesión</h2>
+            <p class="p-secundario">Accede a tu cuenta para descubrir y compartir listas.</p>
+
+            <form action="" method="POST" class="form-login">
+
+                <!-- Campos esenciales -->
+                <label for="email-login">Correo electrónico*</label>
+                <input type="text" id="email-login" name="email-login" placeholder="ejemplo@correo.com" required>
+
+                <label for="password-login">Contraseña*</label>
+                <input type="password" id="password-login" name="password-login" placeholder="Contraseña" required>
+
+                <!-- Enlace de recuperación de contraseña -->
+                <p class="olvidar-contraseña"><a href="#">¿Olvidaste tu contraseña?</a></p>
+
+                <!-- Recordarme -->
+                <label class="recordarme">
+                <input type="checkbox" name="remember"> Recordarme
+                </label>
+
+                <!-- Botón de envío -->
+                <button type="submit">Iniciar sesión</button>
+
+                <!-- Enlace al registro -->
+                <p class="registro-link"> ¿Aún no estás en Findly? <a href="registro.html">Regístrate aquí</a></p>
+
+            </form>
+        </section>
+
+    </header>
+
+    <!-- Pie de pagina -->
+    <footer class="copy">
+        <p>Términos del servicio</p>
+        <p>Política de privacidad</p>
+        <p>Ayuda</p>
+    </footer>
+    
+</body>
+</html>

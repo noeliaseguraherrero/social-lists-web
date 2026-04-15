@@ -1,0 +1,768 @@
+/* ================================================= */
+/* 1. CONFIGURACIÓN E IMPORTACIONES                  */
+/* ================================================= */
+
+@import url(https://fonts.googleapis.com/css?family=Libre+Baskerville:regular,500,600,700,italic,500italic,600italic,700italic);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+:root{
+    --color-principal:#8A98D5;
+    --color-secundario:#0F64A9;
+    --color-texto:#1E1E2F;
+    --color-fondo:#F5F5F5;
+    --color-acento:#FFD6A5;
+}
+
+/* ================================================= */
+/* 2. ESTILOS BASE Y GENERALES                       */
+/* ================================================= */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+a{
+    text-decoration: none;
+}
+
+body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+#destacados {
+    scroll-margin-top: 120px !important; 
+}
+
+/* ================================================= */
+/* 3. NAVEGACIÓN PRINCIPAL (CABECERA)                */
+/* ================================================= */
+
+.nav-principal{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1rem 2rem;
+    background: #fff;
+    border: 1px solid #c4c4c4;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}
+
+.nav-principal .logo{
+    width: 15%;
+    display: flex;
+    align-items: center; 
+    gap: 2px;
+}
+
+.nav-principal .logo a{
+    font-size: 1.95rem;
+    color: var(--color-principal);
+    font-family: 'Libre Baskerville';
+    cursor: pointer; 
+    position: relative;
+    font-weight: 700;
+}
+
+.nav-principal img{
+    width: 3.9rem;
+}
+
+/* --- BUSCADOR --- */
+.nav-principal .input-search{
+    width: 30%;
+    position: relative;
+}
+
+.nav-principal .input-search input{
+    border-radius: 50px;
+    color: var(--color-texto); 
+    outline: none;
+    width: 100%;
+    height: 5vh;
+    border: 1px solid #c4c4c4;
+    padding: 0 1rem 0 3rem; 
+    transition: all 0.3s ease;
+}
+
+.nav-principal .input-search input:focus {
+    border-color: var(--color-principal);
+    box-shadow: 0 0 5px rgba(138, 152, 213, 0.4);
+}
+
+.nav-principal .input-search i{
+    position: absolute;
+    left: 15px; 
+    width: auto;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-principal); 
+    transition: transform 0.3s ease;
+}
+
+.nav-principal .input-search input:focus + i {
+    transform: scale(1.2);
+}
+
+.nav-principal .input-search input::placeholder{
+    letter-spacing: 1px;
+    position: absolute;
+    left: 40px;
+    color: #ccc;
+    font-size: 0.75rem;
+}
+
+/* --- ENLACES DE NAVEGACIÓN --- */
+.nav-principal .enlaces{
+    width: 23%;
+    display: flex;
+    align-items: center;
+}
+
+.nav-principal .enlaces a {
+    font-size: 0.85rem; 
+    padding: 5px 10px;
+    letter-spacing: 1px;
+    color: var(--color-texto);
+    transition: color 0.4s ease; 
+    font-family: 'Libre Baskerville';
+    cursor: pointer; 
+    position: relative; 
+    text-decoration: none;
+}
+
+.nav-principal .enlaces a:hover {
+    color: var(--color-principal); 
+}
+
+.nav-principal .enlaces a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -5px; 
+    left: 50%;
+    background-color: var(--color-principal); 
+    transition: width 0.4s ease, left 0.4s ease;
+    transform: translateX(-50%);
+}
+
+.nav-principal .enlaces a:hover::after {
+    width: 80%; 
+}
+
+/* --- BOTONES DE USUARIO --- */
+.nav-principal .enlaces-usuario{
+    display: flex;
+    width: 17%;
+}
+
+.nav-principal .enlaces-usuario a {
+    font-size: 0.75rem; 
+    padding: 10px 10px;
+    margin: 0 5px; 
+    letter-spacing: 1px;
+    border-radius: 10px;
+    background: var(--color-acento); 
+    color: var(--color-texto);
+    transition: all .4s ease; 
+    font-family: 'Libre Baskerville';
+    cursor: pointer; 
+    text-align: center;
+    border: 2px solid transparent; 
+    display: inline-block;
+}
+
+.nav-principal .enlaces-usuario a:hover {
+    background: #ffffff;      
+    border-color: var(--color-acento); 
+    color: var(--color-texto); 
+    transform: translateY(-2px); 
+}
+
+/* ================================================= */
+/* 4. NAVEGACIÓN SECUNDARIA (SUB-CABECERA)           */
+/* ================================================= */
+
+.nav-sub{
+    width: 100%;
+    height: 35px;
+    display:flex;
+    background: var(--color-principal);
+    justify-content: right;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid #c4c4c4;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    z-index: 9998;
+}
+
+.nav-sub .enlaces-sub a {
+    font-size: 0.80rem; 
+    padding: 5px 10px;
+    margin: 0 5px;
+    letter-spacing: 1px;
+    color: #fff;
+    font-family: 'Libre Baskerville';
+    text-decoration: none; 
+    cursor: pointer; 
+    position: relative; 
+    transition: color 0.4s ease; 
+}
+
+.nav-sub .enlaces-sub a:hover {
+    color: var(--color-acento); 
+}
+
+.nav-sub .enlaces-sub a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -2px; 
+    left: 50%;
+    background-color: var(--color-acento);
+    transition: width 0.4s ease, left 0.4s ease;
+    transform: translateX(-50%);
+}
+
+.nav-sub .enlaces-sub a:hover::after {
+    width: 80%; 
+}
+
+/* ================================================= */
+/* 5. SECCIÓN (CABECERA PRINCIPAL)              */
+/* ================================================= */
+
+header {
+    width: 100%;
+    height: calc(100vh - 95px);
+    display: flex;
+    margin-top: 95px;
+    background: #fff;
+    overflow: hidden;
+}
+
+header .content-header {
+    width: 50%; 
+    padding: 0 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+header .content-header h1 {
+    font-size: 2.5rem; 
+    font-weight: bold;
+    color: var(--color-texto);
+    font-family: 'Libre Baskerville';
+    text-shadow: 2px 2px 5px var(--color-acento);
+    margin-bottom: 25px; 
+}
+
+header .content-header h2 {
+    font-size: 1.4rem; 
+    color: var(--color-texto);
+    font-family: 'Montserrat';
+    margin-bottom: 20px; 
+}
+
+header .content-header p {
+    font-size: 1rem; 
+    color: var(--color-texto);
+    font-family: 'Montserrat';
+    line-height: 1.6; 
+    margin-top: 5px; 
+}
+
+/* ================================================= */
+/* 6. SLIDER Y GRID DE IMÁGENES                      */
+/* ================================================= */
+
+.slider-wrapper {
+    width: 50%; 
+    height: 100%;
+    position: relative;
+    background: #fdfdfd;
+    display: flex;
+    align-items: center;
+}
+
+.slider-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+    transition: opacity 0.4s ease, transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    opacity: 1;
+    transform: scale(1);
+}
+
+.slide-group {
+    min-width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 12px;
+    padding: 40px 60px; 
+}
+
+/* --- ESTILOS DE IMÁGENES INDIVIDUALES --- */
+
+header [class^="imagen-header"] {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    background-size: cover;
+    background-position: center;
+    transition: all .5s ease; 
+    opacity: 90%;
+    display: flex;
+    justify-content: center;  
+    align-items: center; 
+    overflow: hidden;
+    position: relative;
+}
+
+header [class^="imagen-header"] a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+    padding: 12px 0; 
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    opacity: 0.6;
+    transition: all 0.5s ease;
+    background: transparent;
+}
+
+header [class^="imagen-header"] a::before,
+header [class^="imagen-header"] a::after {
+    content: '';
+    position: absolute;
+    width: 40%; 
+    height: 1.8px;
+    left: 50%;
+    background-color: white;
+    transform: translateX(-50%) scaleX(0);
+    transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+header [class^="imagen-header"] a::before {
+    top: 0; 
+    transform-origin: right; 
+}
+
+header [class^="imagen-header"] a::after {
+    bottom: 0; 
+    transform-origin: left; 
+}
+
+header [class^="imagen-header"]:hover {
+    filter: brightness(0.9);
+    transform: scale(1.03);
+}
+
+header [class^="imagen-header"]:hover a {
+    opacity: 1;
+    transform: scale(1.05);
+    background: linear-gradient(to right, 
+        rgba(0,0,0,0) 0%, 
+        rgba(0,0,0,0.5) 30%, 
+        rgba(0,0,0,0.5) 70%, 
+        rgba(0,0,0,0) 100%);
+}
+
+header [class^="imagen-header"]:hover a::before,
+header [class^="imagen-header"]:hover a::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+/* --- CONTROLADORES DEL SLIDER --- */
+.prev, .next {
+    position: absolute;
+    z-index: 100;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--color-acento);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.prev:hover, .next:hover {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.1);
+    background: rgba(204, 163, 114, 1);
+}
+
+/* --- ASIGNACIÓN DE RECURSOS (IMG) --- */
+header .imagen-header1 { background-image: url(img/libros1.jpg); }
+header .imagen-header2 { background-image: url(img/moda1.jpg); }
+header .imagen-header3 { background-image: url(img/musica1.jpg); }
+header .imagen-header4 { background-image: url(img/game1.jpg); }
+header .imagen-header5 { background-image: url(img/musica2.jpg); }
+header .imagen-header6 { background-image: url(img/game2.jpg); }
+header .imagen-header7 { background-image: url(img/moda2.jpg); }
+header .imagen-header8 { background-image: url(img/libros2.jpg); }
+header .imagen-header9 { background-image: url(img/moda3.jpg); }
+header .imagen-header10 { background-image: url(img/musica3.jpg); }
+header .imagen-header11 { background-image: url(img/libros3.jpg); }
+header .imagen-header12 { background-image: url(img/game3.jpg); }
+
+/* ================================================= */
+/* 7. SECCIÓN DESTACADOS                             */
+/* ================================================= */
+
+.destacados-titulo {
+    position: relative;  
+    text-align: center;
+    width: 100%;
+    padding: 60px 0; 
+}
+
+.destacados-titulo h1 {
+    font-family: 'Libre Baskerville';
+    font-size: 3.3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0;
+    position: relative;
+    z-index: 2;
+    background: linear-gradient(to right, 
+        #1E1E2F 0%, 
+        #1E1E2F 30%, 
+        var(--color-principal) 45%, 
+        var(--color-acento) 55%, 
+        #1E1E2F 70%, 
+        #1E1E2F 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: brilloMezcla 10s linear infinite;
+}
+
+@keyframes brilloMezcla {
+    0% { background-position: 200% center; }
+    100% { background-position: -200% center; }
+}
+
+.destacados-titulo p {
+    color: var(--color-texto);
+    font-family: 'Montserrat';
+    font-size: 1.2rem;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 2;
+}
+
+/* --- TARJETAS DE USUARIO --- */
+.destacados-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 25px;
+    padding: 20px 10% 60px 10%;
+    flex-wrap: wrap;
+}
+
+.user-card {
+    position: relative;
+    width: 280px;
+    padding: 35px 0; 
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #f2f2f2;
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    background-size: cover;
+    background-position: center;
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.4); 
+    z-index: 1;
+    transition: background 0.4s ease;
+}
+
+.user-card:hover .card-overlay {
+    background: rgba(255, 255, 255, 1); 
+}
+
+.user-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--color-acento); 
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.user-img {
+    position: relative;
+    z-index: 2;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    background-color: #ffffff; 
+    border: 3px solid #ffffff; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: border-color 0.4s ease, transform 0.3s ease;
+}
+
+.user-card:hover .user-img {
+    border-color: var(--color-principal); 
+    transform: scale(1.05);
+}
+
+.user-details {
+    position: relative;
+    z-index: 2;
+    width: 100%; 
+    background: rgba(255, 255, 255, 0.5); 
+    padding: 20px 25px;
+    backdrop-filter: blur(8px); 
+    margin-bottom: 20px;
+    transition: all 0.4s ease;
+}
+
+.user-card:hover .user-details {
+    background: transparent;
+    backdrop-filter: none;
+}
+
+.user-category {
+    font-family: 'Montserrat';
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--color-principal);
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.user-details h3 {
+    font-family: 'Libre Baskerville';
+    font-size: 1.3rem;
+    color: var(--color-texto);
+    margin: 5px 0;
+    font-weight: normal;
+}
+
+.user-details p {
+    font-family: 'Montserrat';
+    font-size: 0.85rem;
+    color: #333;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.btn-profile {
+    position: relative;
+    z-index: 2;
+    margin-top: auto;
+    text-decoration: none;
+    font-family: 'Montserrat';
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-texto);
+    padding: 10px 28px;
+    background: #ffffff;
+    border: 2px solid var(--color-principal); 
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.btn-profile:hover {
+    background-color: var(--color-principal);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(var(--color-principal-rgb), 0.3);
+}
+
+/* ================================================= */
+/* 8. PIE DE PÁGINA (FOOTER)                         */
+/* ================================================= */
+
+footer{
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--color-principal);
+}
+
+footer p{
+    font-size: 0.9rem;
+    font-family: 'Montserrat';
+    color: #fff;
+    margin: 0 20px;
+    opacity: 0.5;
+}
+
+footer p:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* ================================================= */
+/* 9. SISTEMA RESPONSIVE                             */
+/* ================================================= */
+
+/* --- TABLETS / LAPTOPS (1200px) --- */
+@media (max-width: 1200px) {
+    .nav-principal {
+        gap: 0.8rem;
+        padding: 1rem 1.5rem;
+    }
+    .nav-principal .logo { width: auto; }
+    .nav-principal img { width: 3rem; }
+    .nav-principal .logo a { font-size: 1.5rem; }
+    .nav-principal .enlaces { width: auto; }
+    .nav-principal .enlaces a { font-size: 0.8rem; padding: 5px; }
+    .nav-principal .input-search { width: 22%; }
+    .nav-principal .enlaces-usuario { width: auto; }
+    header .content-header h1 { font-size: 2.1rem; }
+    header .content-header h2 { font-size: 1.2rem; }
+    header [class^="imagen-header"] a {
+        font-size: 0.8rem;
+        padding: 4px 10px;
+    }
+}
+
+/* --- DISPOSITIVOS MÓVILES GRANDES (768px) --- */
+@media (max-width: 768px) {
+    .nav-principal {
+        height: auto;
+        flex-wrap: wrap; 
+        padding: 10px 15px;
+    }
+    .nav-principal .logo { width: auto; order: 1; }
+    .nav-principal .enlaces-usuario { width: auto; order: 2; }
+    .nav-principal .enlaces { 
+        width: 100%; 
+        order: 3; 
+        justify-content: center;
+        margin-top: 10px;
+        border-top: 1px solid #eee;
+        padding-top: 5px;
+    }
+    .nav-principal .input-search { 
+        width: 100%; 
+        order: 4; 
+        margin-top: 10px; 
+    }
+    .nav-sub { display: none; } 
+    header {
+        flex-direction: column;
+        height: auto;
+        margin-top: 160px; 
+    }
+    header .content-header, 
+    .slider-wrapper { 
+        width: 100%; 
+        text-align: center; 
+        padding: 30px 5%;
+    }
+    .slide-group {
+        padding: 20px 40px;
+        height: 450px;
+    }
+    .destacados-titulo { 
+        overflow: hidden; 
+        padding-left: 10px; 
+        padding-right: 10px; 
+    }
+    header [class^="imagen-header"] a {
+        font-size: 0.75rem;
+        padding: 3px 8px;
+    }
+}
+
+/* --- DISPOSITIVOS MÓVILES PEQUEÑOS (480px) --- */
+@media (max-width: 480px) {
+    .nav-principal .logo a { font-size: 1.1rem; }
+    .nav-principal img { width: 2.2rem; }
+    .nav-principal .enlaces-usuario a {
+        font-size: 0.65rem;
+        padding: 6px 10px;
+        margin: 0 2px;
+    }
+    .nav-principal .enlaces a {
+        font-size: 0.7rem;
+        padding: 5px;
+    }
+    .slide-group {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 8px;
+        height: 320px; 
+        padding: 10px 20px;
+    }
+    header .content-header h1 { font-size: 1.6rem; margin-bottom: 15px; }
+    header .content-header h2 { font-size: 1rem; }
+    header .content-header p { font-size: 0.85rem; line-height: 1.4; }
+    header [class^="imagen-header"] a {
+        font-size: 0.6rem; 
+        padding: 2px 6px;  
+        border-width: 1px; 
+        border-radius: 15px;
+    }
+    .destacados-titulo h1 { font-size: 1.5rem; }
+    .destacados-titulo p { font-size: 1rem; padding: 0 10px; }
+    .destacados-container {
+        padding: 20px 5% 40px 5%;
+    }
+    .user-card {
+        width: 100%; 
+    }
+}

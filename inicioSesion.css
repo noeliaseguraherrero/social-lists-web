@@ -1,0 +1,465 @@
+/* ================================================= */
+/* 1. CONFIGURACIÓN Y TIPOGRAFÍA                     */
+/* ================================================= */
+
+@import url(https://fonts.googleapis.com/css?family=Libre+Baskerville:regular,500,600,700,italic,500italic,600italic,700italic);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+/* Variables colores */
+:root{
+    --color-principal:#8A98D5;
+    --color-secundario:#0F64A9;
+    --color-texto:#1E1E2F;
+    --color-fondo:#F5F5F5;
+    --color-acento:#FFD6A5;
+}
+
+/* ================================================= */
+/* 2. ESTILOS GENERALES                              */
+/* ================================================= */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* ================================================= */
+/* 3. NAVEGACIÓN PRINCIPAL (NAV)                     */
+/* ================================================= */
+
+.nav-principal{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1rem 2rem;
+    background: #fff;
+    border: 1px solid #c4c4c4;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}
+
+.nav-principal .logo{
+    width: 15%;
+    display: flex;
+    align-items: center; 
+    gap: 2px;
+}
+
+.nav-principal .logo a{
+    font-size: 1.95rem;
+    color: var(--color-principal);
+    font-family: 'Libre Baskerville';
+    cursor: pointer; 
+    position: relative;
+    font-weight: 700;
+}
+
+.nav-principal img{
+    width: 3.9rem;
+}
+
+/* --- BUSCADOR --- */
+.nav-principal .input-search{
+    width: 30%;
+    position: relative;
+}
+
+.nav-principal .input-search input{
+    border-radius: 50px;
+    color: var(--color-texto); 
+    outline: none;
+    width: 100%;
+    height: 5vh;
+    border: 1px solid #c4c4c4;
+    padding: 0 1rem 0 3rem; 
+    transition: all 0.3s ease;
+}
+
+.nav-principal .input-search input:focus {
+    border-color: var(--color-principal);
+    box-shadow: 0 0 5px rgba(138, 152, 213, 0.4);
+}
+
+.nav-principal .input-search i{
+    position: absolute;
+    left: 15px; 
+    width: auto;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-principal); 
+    transition: transform 0.3s ease;
+}
+
+.nav-principal .input-search input:focus + i {
+    transform: scale(1.2);
+}
+
+.nav-principal .input-search input::placeholder{
+    letter-spacing: 1px;
+    position: absolute;
+    left: 40px;
+    color: #ccc;
+    font-size: 0.75rem;
+}
+
+/* --- ENLACES DE NAVEGACIÓN --- */
+.nav-principal .enlaces{
+    width: 23%;
+    display: flex;
+    align-items: center;
+}
+
+.nav-principal .enlaces a {
+    font-size: 0.85rem; 
+    padding: 5px 10px;
+    letter-spacing: 1px;
+    color: var(--color-texto);
+    transition: color 0.4s ease; 
+    font-family: 'Libre Baskerville';
+    cursor: pointer; 
+    position: relative; 
+    text-decoration: none;
+}
+
+.nav-principal .enlaces a:hover {
+    color: var(--color-principal); 
+}
+
+.nav-principal .enlaces a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -5px; 
+    left: 50%;
+    background-color: var(--color-principal); 
+    transition: width 0.4s ease, left 0.4s ease;
+    transform: translateX(-50%);
+}
+
+.nav-principal .enlaces a:hover::after {
+    width: 80%; 
+}
+
+/* --- BOTONES DE USUARIO --- */
+.nav-principal .enlaces-usuario{
+    display: flex;
+    width: 17%;
+}
+
+.nav-principal .enlaces-usuario a {
+    font-size: 0.75rem; 
+    padding: 10px 10px;
+    margin: 0 5px; 
+    letter-spacing: 1px;
+    border-radius: 10px;
+    background: var(--color-acento); 
+    color: var(--color-texto);
+    transition: all .4s ease; 
+    font-family: 'Libre Baskerville';
+    cursor: pointer; 
+    text-align: center;
+    border: 2px solid transparent; 
+    display: inline-block;
+}
+
+.nav-principal .enlaces-usuario a:hover {
+    background: #ffffff;      
+    border-color: var(--color-acento); 
+    color: var(--color-texto); 
+    transform: translateY(-2px); 
+}
+
+/* ================================================= */
+/* 4. CABECERA Y TARJETA DE INICIO (CARD)            */
+/* ================================================= */
+
+header {
+    width: 100%;
+    height: calc(100vh - 60px);
+    display: flex;
+    justify-content: center;   
+    align-items: center;       
+    margin-top: 60px;
+    overflow: hidden;
+    position: relative;
+}
+
+header .card-inicio {
+    width: 45%;
+    height: auto;
+    background: rgba(138, 152, 213, 0.1);
+    border: 3px solid #FFD6A5;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+    padding: 30px;
+    font-family: 'Montserrat';
+    color: var(--color-texto);
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+header .card-inicio h2{
+    font-family: 'Libre Baskerville';
+    text-transform: uppercase;
+    font-size: 2rem;
+    margin: 5px 0 0 0;
+    color: var(--color-texto);
+}
+
+header .card-inicio .p-secundario{
+    font-size: 1.1rem;
+    margin: 5px 0  25px 0;
+    color: var(--color-texto);
+}
+
+/* ================================================= */
+/* 5. FORMULARIO Y BOTONES                           */
+/* ================================================= */
+
+.form-login {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+}
+
+.form-login label {
+    text-align: left;
+    font-weight: 450;
+    font-size: 1rem;
+}
+
+.form-login input {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-family: 'Montserrat';
+    border-radius: 10px;
+}
+
+.form-login .recordarme {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 1rem;
+}
+
+.form-login button {
+    margin-top: 10px;
+    cursor: pointer;
+    font-family: 'Montserrat';
+    padding: 8px;
+    width: 30%;
+    align-self: center;  
+    border-radius: 10px;
+    background: var(--color-acento);
+    border: 3px solid #FFD6A5;
+    color: var(--color-texto);
+    font-weight: 450;
+    transition: all 0.3s ease;
+}
+
+.form-login button:hover {
+    background: transparent;
+    color: var(--color-texto);
+    border-color: var(--color-principal);
+}
+
+.form-login .registro-link{
+    font-size: 0.9rem;
+}
+
+.form-login .olvidar-contraseña{
+    font-size: 0.9rem;
+}
+
+.form-login .olvidar-contraseña a,
+.form-login .registro-link a {
+    color: var(--color-secundario);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-underline-offset: 4px;
+}
+
+.form-login .olvidar-contraseña a:hover,
+.form-login .registro-link a:hover {
+    color: var(--color-principal);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+}
+
+/* ================================================= */
+/* 6. ESTILOS DE FOCO EN INPUTS                      */
+/* ================================================= */
+
+.form-login input:focus {
+    outline: none; 
+    border: 1px solid var(--color-principal); 
+    background-color: #fff; 
+    transition: all 0.3s ease;
+}
+
+.form-login .recordarme input:focus {
+    box-shadow: 0 0 5px var(--color-acento);
+}
+
+/* ================================================= */
+/* 7. ANIMACIONES                                    */
+/* ================================================= */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================================================= */
+/* 8. PIE DE PÁGINA (FOOTER)                         */
+/* ================================================= */
+
+footer{
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--color-principal);
+}
+
+footer p{
+    font-size: 0.9rem;
+    font-family: 'Montserrat';
+    color: #fff;
+    margin: 0 20px;
+    opacity: 0.5;
+}
+
+footer p:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* ================================================= */
+/* 9. SISTEMA RESPONSIVE                             */
+/* ================================================= */
+
+/* --- TABLETS / LAPTOPS (1200px) --- */
+@media (max-width: 1200px) {
+    .nav-principal {
+        gap: 0.8rem;
+        padding: 1rem 1.5rem;
+    }
+    .nav-principal .logo { width: auto; }
+    .nav-principal img { width: 3rem; }
+    .nav-principal .logo a { font-size: 1.5rem; }
+    .nav-principal .enlaces { width: auto; }
+    .nav-principal .enlaces a { font-size: 0.8rem; padding: 5px; }
+    .nav-principal .input-search { width: 22%; }
+    .nav-principal .enlaces-usuario { width: auto; }
+
+    header .card-inicio {
+        width: 60%;
+    }
+}
+
+/* --- DISPOSITIVOS MÓVILES GRANDES (768px) --- */
+@media (max-width: 768px) {
+    .nav-principal {
+        height: auto;
+        flex-wrap: wrap; 
+        padding: 10px 15px;
+    }
+    .nav-principal .logo { width: auto; order: 1; }
+    .nav-principal .enlaces-usuario { width: auto; order: 2; }
+    .nav-principal .enlaces { 
+        width: 100%; 
+        order: 3; 
+        justify-content: center;
+        margin-top: 10px;
+        border-top: 1px solid #eee;
+        padding-top: 5px;
+    }
+    .nav-principal .input-search { 
+        width: 100%; 
+        order: 4; 
+        margin-top: 10px; 
+    }
+    header {
+        height: auto;
+        padding: 40px 0;
+        margin-top: 140px;
+    }
+
+    header .card-inicio {
+        width: 90%;
+        padding: 25px 20px;
+    }
+
+    header .card-inicio h2 {
+        font-size: 1.7rem;
+    }
+
+    .form-login button {
+        width: 50%;
+    }
+}
+
+/* --- DISPOSITIVOS MÓVILES PEQUEÑOS (480px) --- */
+@media (max-width: 480px) {
+    .nav-principal .logo a { font-size: 1.1rem; }
+    .nav-principal img { width: 2.2rem; }
+    .nav-principal .enlaces-usuario a {
+        font-size: 0.65rem;
+        padding: 6px 10px;
+        margin: 0 2px;
+    }
+    .nav-principal .enlaces a {
+        font-size: 0.7rem;
+        padding: 5px;
+    }
+    header .card-inicio h2 {
+        font-size: 1.5rem;
+    }
+
+    header .card-inicio .p-secundario {
+        font-size: 0.95rem;
+    }
+
+    .form-login label, 
+    .form-login .recordarme {
+        font-size: 0.9rem;
+    }
+
+    .form-login button {
+        width: 100%;
+        padding: 12px;
+    }
+}
