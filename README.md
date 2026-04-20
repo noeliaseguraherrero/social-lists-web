@@ -16,9 +16,9 @@ Este proyecto fue desarrollado como parte del módulo de **Diseño de Interfaces
 
 ## 📸 Vista previa
 
-### Página Principal
+* ### Página Principal
 <img width="1897" height="880" alt="IndexFindly" src="https://github.com/user-attachments/assets/a5a7d0a6-c8be-48e3-a76e-6cf3c1af1ff2" />
 <img width="1896" height="863" alt="IndexFindly2" src="https://github.com/user-attachments/assets/688c4300-2738-4903-879e-0eda051c9f22" />
 
-### Secciones y Listas
+* ### Secciones y Listas
 <img width="1901" height="902" alt="SubpaginaFindly" src="https://github.com/user-attachments/assets/6dd0b64d-9b45-4e89-8892-9b4b79541999" />
