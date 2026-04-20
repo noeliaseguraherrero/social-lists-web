@@ -3,18 +3,18 @@
 Plataforma web estática diseñada para que los usuarios puedan crear y compartir listas de recomendaciones de libros, música, videojuegos y moda. 
 Este proyecto fue desarrollado como parte del módulo de **Diseño de Interfaces Web** en el Grado Superior de **DAW**, enfocándose en la arquitectura de información y la experiencia de usuario.
 
-## Características
+## ✨ Características
 * **Interfaz Interactiva:** Diseño enfocado en la experiencia de usuario (UX).
 * **Categorías Dinámicas:** Secciones específicas para diferentes tipos de contenido.
 * **Diseño Responsive:** Adaptado para dispositivos móviles y escritorio.
 
-## Tecnologías utilizadas
+## 🛠️ Tecnologías utilizadas
 * **HTML5** para la estructura semántica.
 * **CSS3** para el diseño y animaciones.
 * **JavaScript** para la interactividad de las listas.
 * **Bootstrap** para componentes rápidos y estilizados.
 
-## Vista previa
+## 📸 Vista previa
 
 ### Página Principal
 <img width="1897" height="880" alt="IndexFindly" src="https://github.com/user-attachments/assets/a5a7d0a6-c8be-48e3-a76e-6cf3c1af1ff2" />
